@@ -1,0 +1,271 @@
+{
+  "project_info": {
+    "project_number": "425043183942",
+    "firebase_url": "https://adcureapp-default-rtdb.firebaseio.com",
+    "project_id": "adcureapp",
+    "storage_bucket": "adcureapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425043183942:android:f8de20feac6c80aee3bd47",
+        "android_client_info": {
+          "package_name": "com.adcure.adcureapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425043183942-23osfmq7i0vv56rb86f2ltkekd88uhdo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcureapplication",
+            "certificate_hash": "a53418ddd6ac8f447e2fd6790af3aefb82c612ff"
+          }
+        },
+        {
+          "client_id": "425043183942-2heb4u2q56sc3vdj3l59d20qi38fodvn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcureapplication",
+            "certificate_hash": "46e8246c69318df02c98ecce6a9afaaf2c87b888"
+          }
+        },
+        {
+          "client_id": "425043183942-6jnuv83et60h5efd1b4lqs46hkj76gt0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcureapplication",
+            "certificate_hash": "f03a27d5fedbb3426558de6c1b220565b47263d0"
+          }
+        },
+        {
+          "client_id": "425043183942-bi4qfgc313be3e70hk5dtih7mscu4jap.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcureapplication",
+            "certificate_hash": "509c620994ca87feb56514d881be6794482de2e5"
+          }
+        },
+        {
+          "client_id": "425043183942-gqj1tflni0fo820fca6lbc6767u3v57r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcureapplication",
+            "certificate_hash": "7b1a136a8e7fd1a7e9fd08e9f06085d4f890fc19"
+          }
+        },
+        {
+          "client_id": "425043183942-mvgvcr4g6eu0s9vovgtt6kasdpsonv4q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcureapplication",
+            "certificate_hash": "59b1e30d87b58fbc4796cbb7b0dcaf15e1b03b95"
+          }
+        },
+        {
+          "client_id": "425043183942-ptaqf0pl6pugns0kjjis66osco61md42.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcureapplication",
+            "certificate_hash": "9f64e0d895f204cebf0959c292f81afd10203b2a"
+          }
+        },
+        {
+          "client_id": "425043183942-ijlg2j9n5b06pe65ku601chrnlripo22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO8c64_Nh4pXr0N3eFJ4lM_ol7NyG41us"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425043183942-ijlg2j9n5b06pe65ku601chrnlripo22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425043183942:android:522ee6e103c2b312e3bd47",
+        "android_client_info": {
+          "package_name": "com.adcure.adcuredoctorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425043183942-1em9hflkmep63pej06mmd79r6h2ck9ch.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcuredoctorapp",
+            "certificate_hash": "7b3529ff7a6daceb705e692160fa9083e998a5bf"
+          }
+        },
+        {
+          "client_id": "425043183942-8g8rtrep1a06crqo7r31gq64lc306v9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcuredoctorapp",
+            "certificate_hash": "a3f581b3833416f0e469c9b214d8251203985715"
+          }
+        },
+        {
+          "client_id": "425043183942-g12cl2klsqbgcq4ir7rslle22l5ksoc2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcuredoctorapp",
+            "certificate_hash": "509c620994ca87feb56514d881be6794482de2e5"
+          }
+        },
+        {
+          "client_id": "425043183942-k2o5uo0e0lnr4ttep30vvg2fpr1v38mb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcuredoctorapp",
+            "certificate_hash": "9f64e0d895f204cebf0959c292f81afd10203b2a"
+          }
+        },
+        {
+          "client_id": "425043183942-ocp82mfce395o0f84mb0jfv43fb6nd1v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcuredoctorapp",
+            "certificate_hash": "59b1e30d87b58fbc4796cbb7b0dcaf15e1b03b95"
+          }
+        },
+        {
+          "client_id": "425043183942-qh17p32oiumjq3pqn4tt3r7n3816jqtp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcuredoctorapp",
+            "certificate_hash": "8e4f88065b8d7bd199635188f150de94388eef40"
+          }
+        },
+        {
+          "client_id": "425043183942-u6ul62npa6iklcfkfba5906hq9jsja66.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adcuredoctorapp",
+            "certificate_hash": "46e8246c69318df02c98ecce6a9afaaf2c87b888"
+          }
+        },
+        {
+          "client_id": "425043183942-ijlg2j9n5b06pe65ku601chrnlripo22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO8c64_Nh4pXr0N3eFJ4lM_ol7NyG41us"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425043183942-ijlg2j9n5b06pe65ku601chrnlripo22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425043183942:android:092fdae4c552544ee3bd47",
+        "android_client_info": {
+          "package_name": "com.adcure.adminactivity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425043183942-1ihhb8eg9ofj7rvi04cij9vvp55i86ah.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adminactivity",
+            "certificate_hash": "41f4239effc76c2a21745e829bb64c6eab09ccd0"
+          }
+        },
+        {
+          "client_id": "425043183942-fei3e75s2c3tas7b8mt8srlnqaqh4u0a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adminactivity",
+            "certificate_hash": "59b1e30d87b58fbc4796cbb7b0dcaf15e1b03b95"
+          }
+        },
+        {
+          "client_id": "425043183942-rtf3gf1f00c7mgq119171d36cu5db3t8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adminactivity",
+            "certificate_hash": "9f64e0d895f204cebf0959c292f81afd10203b2a"
+          }
+        },
+        {
+          "client_id": "425043183942-vo6o5d3o0bba9uqbt23hke3u8dhji0f2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adcure.adminactivity",
+            "certificate_hash": "509c620994ca87feb56514d881be6794482de2e5"
+          }
+        },
+        {
+          "client_id": "425043183942-ijlg2j9n5b06pe65ku601chrnlripo22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO8c64_Nh4pXr0N3eFJ4lM_ol7NyG41us"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425043183942-ijlg2j9n5b06pe65ku601chrnlripo22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425043183942:android:66e1cc3abf561f36e3bd47",
+        "android_client_info": {
+          "package_name": "com.adcure.deliverypartner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425043183942-ijlg2j9n5b06pe65ku601chrnlripo22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO8c64_Nh4pXr0N3eFJ4lM_ol7NyG41us"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425043183942-ijlg2j9n5b06pe65ku601chrnlripo22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

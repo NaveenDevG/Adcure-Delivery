@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:padding="@dimen/padding5"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:filterTouchesWhenObscured="true">
+
+    <TextView
+        style="@style/HeaderTextViewStyle"
+        android:layout_width="fill_parent"
+        android:background="@color/purple_700"
+        android:drawableLeft="@drawable/ic_profile"
+        android:gravity="left|center"
+        android:paddingLeft="@dimen/padding5"
+        android:text="  Enter OTP"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/verification2buttonHeightSize"
+                    android:layout_gravity="center"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:text="Verification Code"
+                    android:textColor="@color/purple_500"
+                    android:textSize="@dimen/fontSize"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/verification2buttonHeightSize"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:text="Enter OTP send to your Mobile Number"
+                    android:textColor="@color/purple_500"
+                    android:textSize="@dimen/importtext"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/editTextHeight"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="right|center"
+                    android:paddingRight="@dimen/margin15dp"
+                    android:paddingTop="@dimen/padding5"
+                    android:text="OTP:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fieldNameSize"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/tv_OTPCodeForVerification"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/editTextHeight"
+                    android:layout_weight="1"
+                    android:background="@color/editTextManadatoryColor"
+                    android:gravity="left|center_vertical"
+                    android:maxLength="6"
+                    android:paddingLeft="@dimen/padding10"
+                    android:textColor="@color/fieldInnerConstantNameColor"
+                    android:textSize="@dimen/fieldInnerConstantNameSize" />
+
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/editTextHeight"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/padding10"
+                    android:text="TimerStart:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fieldInnerConstantNameSize" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:layout_marginLeft="@dimen/margin50dp"
+            android:layout_marginRight="@dimen/margin50dp"
+            android:layout_marginBottom="@dimen/margin50dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/but_Verify_OTP"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/buttonHeightSize"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/margin3dp"
+                 android:background="@drawable/button"
+                android:filterTouchesWhenObscured="true"
+                android:text="Verify OTP"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonFontSize" />
+            <Button
+                android:id="@+id/but_Resend_OTP"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/buttonHeightSize"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin15dp"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="@drawable/button"
+                android:text="Resend OTP"
+                android:filterTouchesWhenObscured="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonFontSize" />
+
+
+            <Button
+                android:id="@+id/but_OTP_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/buttonHeightSize"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin15dp"
+                 android:background="@drawable/button"
+                android:layout_weight="1"
+                android:filterTouchesWhenObscured="true"
+                android:text="Cancel"
+                android:textAllCaps="false"
+
+                android:textColor="@color/white"
+                android:textSize="@dimen/buttonFontSize" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,171 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="item_offset">10dp</dimen>
+    <dimen name="detail_backdrop_height">250dp</dimen>
+    <dimen name="backdrop_title">30dp</dimen>
+    <dimen name="backdrop_subtitle">18dp</dimen>
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="card_album_radius">0dp</dimen>
+    <dimen name="category_card_height">160dp</dimen>
+    <dimen name="album_title_padding">10dp</dimen>
+    <dimen name="album_title">15dp</dimen>
+    <dimen name="songs_count_padding_bottom">5dp</dimen>
+    <dimen name="songs_count">12dp</dimen>
+    <dimen name="ic_album_overflow_width">20dp</dimen>
+    <dimen name="ic_album_overflow_height">30dp</dimen>
+    <dimen name="ic_album_overflow_margin_top">10dp</dimen>
+
+    <dimen name="text_size_xsmall">8dp</dimen>
+    <dimen name="text_size_small">10dp</dimen>
+    <dimen name="text_size_medium">12dp</dimen>
+    <dimen name="text_size_xmedium">14dp</dimen>
+    <dimen name="text_size_large">16dp</dimen>
+    <dimen name="view_width_small">1dp</dimen>
+    <dimen name="view_width_xsmall">0.5dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="img_width_height">120dp</dimen>
+    <dimen name="slide_title">30dp</dimen>
+    <dimen name="slide_desc">16dp</dimen>
+    <dimen name="desc_padding">40dp</dimen>
+    <dimen name="activity_horizontal_margin">16sp</dimen>
+    <dimen name="activity_vertical_margin">16sp</dimen>
+    <dimen name="table_row_margin">8sp</dimen>
+    <dimen name="layout_margin">10sp</dimen>
+    <dimen name="checkboxtextsize">16sp</dimen>
+    <dimen name="checkbox_height_size">20dp</dimen>
+    <dimen name="mainheadtext">22sp</dimen>
+    <dimen name="importtext">18sp</dimen>
+    <dimen name="text">18dp</dimen>
+
+    <dimen name="gridHeight">10dp</dimen>
+
+    <dimen name="margin20">20sp</dimen>
+    <dimen name="fontSize">18sp</dimen>
+    <dimen name="headerTextview">17sp</dimen>
+    <dimen name="fieldInnerConstantNameSize">17sp</dimen>
+    <dimen name="checkboxfontsize">16sp</dimen>
+    <dimen name="checkboxtextsizef">16sp</dimen>
+    <dimen name="customerEnrollCensusSize">15sp</dimen>
+    <dimen name="customerEnrollCensusInnerSize">16sp</dimen>
+    <dimen name="customerEnrollCensusSelectVillageSize">16sp</dimen>
+    <dimen name="buttonFontSize">16sp</dimen>
+    <dimen name="buttonHeightSize">50dp</dimen>
+    <dimen name="buttonWidthSize">150dp</dimen>
+    <dimen name="buttonMarginLeftSize">80dp</dimen>
+    <dimen name="fieldNameSize">16sp</dimen>
+    <dimen name="loginQualityTextSize">20sp</dimen>
+    <dimen name="fieldInnerNameSize">17sp</dimen>
+    <dimen name="loginfontSize">22sp</dimen>
+    <dimen name="margin10sp">10sp</dimen>
+    <dimen name="margin15sp">15sp</dimen>
+    <dimen name="size14sp">14sp</dimen>
+    <dimen name="margin25sp">25sp</dimen>
+    <dimen name="margin20sp">20sp</dimen>
+    <dimen name="margin30sp">30sp</dimen>
+    <dimen name="margin35sp">35sp</dimen>
+    <dimen name="margin40sp">40sp</dimen>
+    <dimen name="margin45sp">45sp</dimen>
+    <dimen name="margin50sp">50sp</dimen>
+    <dimen name="spinnerheigthsize42dp">45dp</dimen>
+    <dimen name="margin1dp">1dp</dimen>
+    <dimen name="margin2dp">2dp</dimen>
+    <dimen name="margin12dp">12dp</dimen>
+    <dimen name="margin14dp">14dp</dimen>
+    <dimen name="margin16dp">16dp</dimen>
+    <dimen name="margin0dp">0dp</dimen>
+    <dimen name="margin3dp">3dp</dimen>
+    <dimen name="margin4dp">4dp</dimen>
+    <dimen name="margin5dp">5dp</dimen>
+    <dimen name="margin6dp">6dp</dimen>
+    <dimen name="margin8dp">8dp</dimen>
+    <dimen name="margin7dp">7dp</dimen>
+    <dimen name="margin10dp">10dp</dimen>
+    <dimen name="margin9dp">9dp</dimen>
+    <dimen name="margin11dp">11dp</dimen>
+    <dimen name="margin15dp">15dp</dimen>
+    <dimen name="margin20dp">20dp</dimen>
+    <dimen name="margin25dp">25dp</dimen>
+    <dimen name="margin30dp">30dp</dimen>
+    <dimen name="margin40dp">40dp</dimen>
+    <dimen name="margin42dp">42dp</dimen>
+    <dimen name="margin45dp">45dp</dimen>
+    <dimen name="margin50dp">50dp</dimen>
+    <dimen name="margin80dp">80dp</dimen>
+    <dimen name="margin90dp">90dp</dimen>
+    <dimen name="margin95dp">95dp</dimen>
+    <dimen name="margin100dp">100dp</dimen>
+    <dimen name="margin150dp">150dp</dimen>
+    <dimen name="margin120dp">120dp</dimen>
+    <dimen name="margin130dp">130dp</dimen>
+    <dimen name="menuImageHeight">130dp</dimen>
+    <dimen name="margin200dp">200dp</dimen>
+    <dimen name="margin250dp">250dp</dimen>
+    <dimen name="margin300dp">300dp</dimen>
+    <dimen name="margin350dp">350dp</dimen>
+    <dimen name="margin400dp">400dp</dimen>
+    <dimen name="margin500dp">500dp</dimen>
+    <dimen name="margin600dp">600dp</dimen>
+    <dimen name="headerFontSize">17sp</dimen>
+    <dimen name="headerSize">20sp</dimen>
+    <dimen name="stipSize">50sp</dimen>
+    <dimen name="loginwidth">400dp</dimen>
+    <dimen name="listheaderinnerSize">14sp</dimen>
+    <dimen name="editTextHeight">45dp</dimen>
+
+
+    <!-- Modified Sizes for Asus Screen -->
+    <integer name="menuGridNoOfColomn">4</integer>
+
+    <dimen name="padding10">10dp</dimen>
+    <dimen name="padding30">30dp</dimen>
+    <dimen name="padding4">4dp</dimen>
+    <dimen name="padding15">15dp</dimen>
+    <dimen name="padding12">12dp</dimen>
+    <dimen name="padding20">20dp</dimen>
+    <dimen name="padding7">7dp</dimen>
+    <dimen name="padding8">8dp</dimen>
+    <dimen name="padding5">5dp</dimen>
+    <dimen name="padding50">50dp</dimen>
+
+    <dimen name="splashRotate">70dp</dimen>
+    <dimen name="verification2buttonHeightSize">60dp</dimen>
+    <dimen name="bmhvbuttonHeightSize">65dp</dimen>
+    <dimen name="alertTextSize">8sp</dimen>
+
+
+    // EditText max lengths
+
+    // customerEnrollment
+    <integer name="landMark">80</integer>
+    <integer name="customerName">45</integer>
+    <integer name="fatherName">45</integer>
+    <integer name="husbandName">45</integer>
+    <integer name="memberId">30</integer>
+    <integer name="addressLine1">200</integer>
+    <integer name="addressLine2">200</integer>
+    <integer name="district">45</integer>
+    <integer name="coCustomerName">45</integer>
+    <integer name="additionalKyc">20</integer>
+
+    <!--//LoanApplication-->
+    <!--<fraction name="agricultureLand">5.2</fraction>-->
+    <!--<fraction name="monthlyMilkSales">5.2</fraction>-->
+    <!--<integer name="cropsPerAnnum">5</integer>-->
+    <!--<integer name="cowsCount">5</integer>-->
+    <!--<integer name="buffaloesCount">5</integer>-->
+    <!--<integer name="goatsCount">5</integer>-->
+    <!--<integer name="bullocksCount">5</integer>-->
+    <!--<integer name="checkenCount">5</integer>-->
+    <!--<integer name="pigsCount">5</integer>-->
+
+    <integer name="servicePointName">40</integer>
+    <integer name="groupName">40</integer>
+    <integer name="batchName">40</integer>
+</resources>

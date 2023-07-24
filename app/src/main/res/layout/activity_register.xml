@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#087B89"
+    tools:context=".RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideInset">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:gravity="center"
+            android:theme="@style/Theme.AdcureDeliveryPartner"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#fff"
+                android:textSize="45sp"
+                android:id="@+id/appname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:text="AdCure Delivery"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true"/>
+
+            <RelativeLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:padding="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profilepic"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/user"
+                    app:civ_border_color="@color/colorAccent"
+                    app:civ_border_width="1dp" />
+
+                <ImageView
+                    android:id="@+id/uploadpic"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignRight="@+id/profilepic"
+                    android:layout_alignBottom="@+id/profilepic"
+                    android:elevation="4dp"
+                    android:src="@drawable/uploadpic" />
+
+            </RelativeLayout>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Name"
+                app:met_iconLeft="@drawable/man"
+                app:met_floatingLabel="highlight"
+
+                app:met_baseColor="@color/colorAccent"
+                app:met_clearButton="true"
+                app:met_primaryColor="@color/colorAccent"
+                app:met_errorColor="@color/darkWhite"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Email"
+                app:met_floatingLabel="highlight"
+                app:met_iconLeft="@android:drawable/sym_action_email"
+                app:met_baseColor="@color/colorAccent"
+                app:met_errorColor="@color/darkWhite"
+                app:met_primaryColor="@color/colorAccent"
+                app:met_clearButton="true"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Password"
+                app:met_iconLeft="@drawable/lock"
+                app:met_floatingLabel="highlight"
+                android:visibility="gone"
+                android:inputType="textPassword"
+                app:met_errorColor="@color/darkWhite"
+                app:met_baseColor="@color/colorAccent"
+                app:met_primaryColor="@color/colorAccent"
+                app:met_clearButton="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/confirmpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Reenter Password"
+                app:met_iconLeft="@drawable/lock"
+                android:layout_weight="3"
+                android:visibility="gone"
+                app:met_floatingLabel="highlight"
+                app:met_baseColor="@color/colorAccent"
+                app:met_clearButton="true"
+                app:met_errorColor="@color/darkWhite"
+                app:met_primaryColor="@color/colorAccent"
+                android:inputType="textPassword"/>
+                <Button
+                    android:id="@+id/bt_email_verify"
+                    style="@style/AppTheme.RoundedCornerMaterialButton"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:textAllCaps="false"
+                    android:filterTouchesWhenObscured="true"
+                    android:text="Verify"
+                    android:textSize="13dp" /></LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mobile Number"
+                    android:maxLength="10"
+
+                    app:met_iconLeft="@android:drawable/stat_sys_phone_call"
+                    app:met_floatingLabel="highlight"
+                    app:met_baseColor="@color/colorAccent"
+                    app:met_errorColor="@color/darkWhite"
+                    app:met_clearButton="true"
+                    android:layout_weight="3"
+                    app:met_primaryColor="@color/colorAccent"
+                    android:inputType="number"/>
+
+                <Button
+                    android:id="@+id/bt_primaryMobile_verify"
+                    android:enabled="false"
+                    android:background="@drawable/txtviewbg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:filterTouchesWhenObscured="true"
+                    android:text="Otp Login"
+                    android:textSize="13dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bor"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/ll_front">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aadhaar Front upload: "
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgfrontbtn"
+                    android:padding="5dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@color/bg_screen3"
+                    android:src="@drawable/ic_photo_camera">
+
+                </ImageButton>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/imgFrontView"
+
+                    android:src="@color/black">
+
+                </ImageView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bor"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/ll_back">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aadhaar Back upload: "
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgbackUpload"
+                    android:padding="5dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@color/bg_screen3"
+                    android:src="@drawable/ic_photo_camera">
+
+                </ImageButton>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/imgBackView"
+
+                    android:src="@color/black">
+
+                </ImageView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/register"
+                    android:text="Register"
+android:textColor="@color/colorPrimary"
+                    style="@style/AppTheme.RoundedCornerMaterialButton"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/forgot_pass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forgotpassword"
+                    android:visibility="gone"
+                    android:onClick="toForgot"
+                    style="@style/fonts"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="|"
+                    android:visibility="gone"
+                    style="@style/fonts"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/login_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/fonts"
+                    android:onClick="toLogin"
+                    android:text="Login now" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

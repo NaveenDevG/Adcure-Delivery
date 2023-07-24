@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    tools:context=".SplashActivity" >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    >
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/imgh"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_centerHorizontal="true"
+         android:src="@drawable/ad2" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/imgh"
+        android:text="AdCure"
+        android:textStyle="normal|bold"
+        android:textSize="25sp"
+        android:layout_centerInParent="true"
+        android:textColor="#323079"
+        />
+</RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:src="@drawable/pic" />
+
+</RelativeLayout>
