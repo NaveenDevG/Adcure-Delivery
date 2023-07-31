@@ -1,7 +1,7 @@
 package com.adcure.deliverypartner;
 
 public class Orders {
-    String date, gaddress, gcity, gname, gphone, gpincode, gstate, uid, paid, paymentid, time, umail, uphone, items, placed, shipped, delivered, invoiceid, cashback, coupon,fivepercentcoupon,couponamount;
+    String date, gaddress, gcity, gname, gphone, gpincode, gstate, uid, paid, paymentid, time, umail, uphone, items, placed, shipped, delivered, invoiceid, cashback, coupon, fivepercentcoupon, couponamount;
 
     public String getCouponamount() {
         return couponamount;

@@ -5,92 +5,102 @@
     android:background="@color/white"
     android:layout_margin="@dimen/padding5"
     android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ll_h"
         android:orientation="vertical">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
 
-    android:layout_marginTop="@dimen/padding10">
-<ImageView
-    android:layout_width="@dimen/padding50"
-    android:layout_height="@dimen/padding50"
-    android:background="@color/white"
-android:src="@drawable/order_pla"    />
-   <RelativeLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       ><TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       android:layout_gravity="center"
-       android:textSize="16sp"
-       android:id="@+id/orderplacedtxt"
-        android:layout_marginLeft="5dp"
-        android:text="Order Placed Successfully!"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
 
-       <TextView
-           android:id="@+id/notDeliverd"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_below="@id/orderplacedtxt"
-           android:layout_gravity="center"
-           android:layout_marginLeft="5dp"
-           android:text="(Not Delivered)"
-           android:textColor="#6F000000"
-           android:textSize="14sp" />
+            android:layout_marginTop="@dimen/padding10">
 
-       <TextView
-           android:id="@+id/orderId"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_below="@id/notDeliverd"
-           android:layout_gravity="center"
-           android:layout_marginLeft="5dp"
-           android:text="Order/Payment Id: "
-           android:textColor="#6F000000"
-           android:textSize="14sp" />
+            <ImageView
+                android:layout_width="@dimen/padding50"
+                android:layout_height="@dimen/padding50"
+                android:background="@color/white"
+                android:src="@drawable/order_pla" />
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_below="@id/orderId"
-           android:layout_gravity="center"
-           android:layout_marginLeft="5dp"
-android:id="@+id/txtItemscount"
-           android:text="Items : 3"
-           android:textColor="#6F000000"
-           android:textSize="14sp" />
-   </RelativeLayout></LinearLayout>
-    <View android:layout_width="match_parent"
-        android:layout_height="@dimen/view_width_small"
-        android:background="@color/grey_light"
-        android:layout_marginTop="10dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/notDeliverd"
-         android:layout_margin="5dp"
- android:textColor="#6F000000"
-        android:id="@+id/txtNotshipp"
-        android:text="This Order is Currently being processed.."
-        android:textSize="12sp" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-         android:text="View Order"
-        android:textAllCaps="false"
-        android:layout_margin="5dp"
-        android:background="@drawable/button"
-        android:textSize="20sp"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        android:id="@+id/ordersItems"
-        android:textAlignment="center"
-        android:textColor="#fff"
- /></LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="16sp"
+                    android:id="@+id/orderplacedtxt"
+                    android:layout_marginLeft="5dp"
+                    android:text="Order Placed Successfully!" />
+
+                <TextView
+                    android:id="@+id/notDeliverd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderplacedtxt"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:text="(Not Delivered)"
+                    android:textColor="#6F000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/orderId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/notDeliverd"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:text="Order/Payment Id: "
+                    android:textColor="#6F000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderId"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/txtItemscount"
+                    android:text="Items : 3"
+                    android:textColor="#6F000000"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_width_small"
+            android:background="@color/grey_light"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notDeliverd"
+            android:layout_margin="5dp"
+            android:textColor="#6F000000"
+            android:id="@+id/txtNotshipp"
+            android:text="This Order is Currently being processed.."
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Order"
+            android:textAllCaps="false"
+            android:layout_margin="5dp"
+            android:background="@drawable/button"
+            android:textSize="20sp"
+
+            android:id="@+id/ordersItems"
+            android:textAlignment="center"
+            android:textColor="#fff" />
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

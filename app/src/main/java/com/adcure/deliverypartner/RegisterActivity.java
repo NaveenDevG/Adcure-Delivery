@@ -70,11 +70,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import es.dmoral.toasty.Toasty;
 
 public class RegisterActivity extends AppCompatActivity {
-    private static  boolean IMAGE_FRONT =false,IMAGE_BACK=false ;
-    private static  int GALLERYINTENT2 =3,GALLERYINTENT1=2 ;
+    private static boolean IMAGE_FRONT = false, IMAGE_BACK = false;
+    private static int GALLERYINTENT2 = 3, GALLERYINTENT1 = 2;
     private EditText edtname, edtemail, edtpass, edtcnfpass, edtnumber;
     private String check, name, email, password, mobile, profile;
-    private String productRandomKey, DownloadUri,DownloadUri2,DownloadUri1;
+    private String productRandomKey, DownloadUri, DownloadUri2, DownloadUri1;
 
     CircleImageView image;
     private FirebaseUser currentUser;
@@ -82,8 +82,8 @@ public class RegisterActivity extends AppCompatActivity {
     CountDownTimer countDownTimer;
     private static int GALLERYINTENT = 1;
     KProgressHUD progressDialog;
-    private StorageTask uploadTask,uploadTask1,uploadTask2;
-    private Uri imageUri,imageUri1,imageUri2;
+    private StorageTask uploadTask, uploadTask1, uploadTask2;
+    private Uri imageUri, imageUri1, imageUri2;
     private StorageReference storageReference;
     long timerForCountDown = 30000; //300000 for 5 minshouse_verification_customers/post_customer_loan_hv_status
     boolean isCountDownTimerIsRunning = false;
@@ -98,201 +98,199 @@ public class RegisterActivity extends AppCompatActivity {
     Button otpbtn;
     Bitmap profilePicture;
     private String doctorRandomKey;
-     public static final String TAG = "MyTag";
+    public static final String TAG = "MyTag";
     private Button bt_resend_OTP, but_OTP_cancel;
     private String str_CustomerOTP;
     private TextView tv_timer;
     private Button bt_verify_OTP;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
-    private String pic="";Button button;
-private ImageButton frontABtn,backABtn;
-ImageView frontView,backView;
-boolean otpStatus=false;
-    private String currentUserId="";
+    private String pic = "";
+    Button button;
+    private ImageButton frontABtn, backABtn;
+    ImageView frontView, backView;
+    boolean otpStatus = false;
+    private String currentUserId = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-      try{  super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        rootRef = FirebaseDatabase.getInstance().getReference();
-frontABtn=findViewById(R.id.imgfrontbtn);
-backABtn=findViewById(R.id.imgbackUpload);
-frontView=findViewById(R.id.imgFrontView);
-backView=findViewById(R.id.imgBackView);
-frontABtn.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-OpenGallery1();
-    }
-});
-backABtn.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-OpenGallery2();
-              }
-          });
-        Typeface typeface = ResourcesCompat.getFont(this, R.font.blacklist);
-        TextView appname = findViewById(R.id.appname);
-        appname.setTypeface(typeface);
-        upload = findViewById(R.id.uploadpic);
-        storageReference = FirebaseStorage.getInstance().getReference().child("Deliver Agent info");
+        try {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_register);
+            rootRef = FirebaseDatabase.getInstance().getReference();
+            frontABtn = findViewById(R.id.imgfrontbtn);
+            backABtn = findViewById(R.id.imgbackUpload);
+            frontView = findViewById(R.id.imgFrontView);
+            backView = findViewById(R.id.imgBackView);
+            frontABtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    OpenGallery1();
+                }
+            });
+            backABtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    OpenGallery2();
+                }
+            });
+            Typeface typeface = ResourcesCompat.getFont(this, R.font.blacklist);
+            TextView appname = findViewById(R.id.appname);
+            appname.setTypeface(typeface);
+            upload = findViewById(R.id.uploadpic);
+            storageReference = FirebaseStorage.getInstance().getReference().child("Deliver Agent info");
 
-        image = findViewById(R.id.profilepic);
-        edtname = findViewById(R.id.name);
-        edtemail = findViewById(R.id.email);
-        edtpass = findViewById(R.id.password);
-        edtcnfpass = findViewById(R.id.confirmpassword);
-        edtnumber = findViewById(R.id.number);
+            image = findViewById(R.id.profilepic);
+            edtname = findViewById(R.id.name);
+            edtemail = findViewById(R.id.email);
+            edtpass = findViewById(R.id.password);
+            edtcnfpass = findViewById(R.id.confirmpassword);
+            edtnumber = findViewById(R.id.number);
 //          edtnumber.addTextChangedListener(TextWatcher1);
 
-        otpbtn = (Button) findViewById(R.id.bt_primaryMobile_verify);
+            otpbtn = (Button) findViewById(R.id.bt_primaryMobile_verify);
 
-        otpbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                edtpass.setVisibility(View.GONE);
-                edtcnfpass.setVisibility(View.GONE);
-                mobile = "+91" + edtnumber.getText().toString();
+            otpbtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    edtpass.setVisibility(View.GONE);
+                    edtcnfpass.setVisibility(View.GONE);
+                    mobile = "+91" + edtnumber.getText().toString();
 
-                if (STATUS){
-                    PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                            mobile, 60, TimeUnit.SECONDS, RegisterActivity.this, callbacks
-                    );
-                }
-                else if (validateName() && validateEmail()  ) {
-                    rootRef.child("Agents").child(edtnumber.getText().toString()).addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(!snapshot.exists()){
-                                if (IMAGE_STATUS){
-                                    if(IMAGE_FRONT && IMAGE_BACK) {
-                                        name = edtname.getText().toString();
-                                        email = edtemail.getText().toString();
-                                        password = edtcnfpass.getText().toString();
-                                        mobile = "+91" + edtnumber.getText().toString();
+                    if (STATUS) {
+                        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                                mobile, 60, TimeUnit.SECONDS, RegisterActivity.this, callbacks
+                        );
+                    } else if (validateName() && validateEmail()) {
+                        rootRef.child("Agents").child(edtnumber.getText().toString()).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if (!snapshot.exists()) {
+                                    if (IMAGE_STATUS) {
+                                        if (IMAGE_FRONT && IMAGE_BACK) {
+                                            name = edtname.getText().toString();
+                                            email = edtemail.getText().toString();
+                                            password = edtcnfpass.getText().toString();
+                                            mobile = "+91" + edtnumber.getText().toString();
 
 
-                                        progressDialog.show();
-                                        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                                                mobile, 60, TimeUnit.SECONDS, RegisterActivity.this, callbacks
-                                        );
-                                    }else{
-                                        Adialog.showAlert("Alert", "Make sure that you uploaded AAdhaar photos..", RegisterActivity.this);
+                                            progressDialog.show();
+                                            PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                                                    mobile, 60, TimeUnit.SECONDS, RegisterActivity.this, callbacks
+                                            );
+                                        } else {
+                                            Adialog.showAlert("Alert", "Make sure that you uploaded AAdhaar photos..", RegisterActivity.this);
 
+                                        }
+                                    } else {
+                                        Adialog.showAlert("Alert", "Please Upload your photo", RegisterActivity.this);
                                     }
-                                }else{
-                                    Adialog.showAlert("Alert", "Please Upload your photo", RegisterActivity.this);
+                                } else {
+                                    Adialog.showAlert("Alert", "Please use another mobile number.. This number is already regestered..", RegisterActivity.this);
                                 }
-                                }
-                            else{
-                                Adialog.showAlert("Alert","Please use another mobile number.. This number is already regestered..",RegisterActivity.this);
                             }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
 
-                        }
-                    })  ;
+                            }
+                        });
 
-                } else {
-                    Adialog.showAlert("Alert", "please fill all the details", RegisterActivity.this);
-                    // Toasty.info(RegisterActivity.this,"please fill all the details ",Toast.LENGTH_LONG).show();
+                    } else {
+                        Adialog.showAlert("Alert", "please fill all the details", RegisterActivity.this);
+                        // Toasty.info(RegisterActivity.this,"please fill all the details ",Toast.LENGTH_LONG).show();
+
+                    }
 
                 }
+            });
+            progressDialog = KProgressHUD.create(RegisterActivity.this)
+                    .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                    .setLabel("Please wait")
+                    .setCancellable(false)
+                    .setAnimationSpeed(2)
+                    .setDimAmount(0.5f);
+            edtname.addTextChangedListener(nameWatcher);
+            edtemail.addTextChangedListener(emailWatcher);
+            edtpass.addTextChangedListener(passWatcher);
+            edtcnfpass.addTextChangedListener(cnfpassWatcher);
+            edtnumber.addTextChangedListener(numberWatcher);
+            mAuth = FirebaseAuth.getInstance();
+            currentUser = mAuth.getCurrentUser();
 
-            }
-        });
-        progressDialog = KProgressHUD.create(RegisterActivity.this)
-                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-                .setLabel("Please wait")
-                .setCancellable(false)
-                .setAnimationSpeed(2)
-                .setDimAmount(0.5f);
-        edtname.addTextChangedListener(nameWatcher);
-        edtemail.addTextChangedListener(emailWatcher);
-        edtpass.addTextChangedListener(passWatcher);
-        edtcnfpass.addTextChangedListener(cnfpassWatcher);
-        edtnumber.addTextChangedListener(numberWatcher);
-        mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
+            // requestQueue = Volley.newRequestQueue(RegisterActivity.this);
 
-        // requestQueue = Volley.newRequestQueue(RegisterActivity.this);
+            //validate user details and register user
 
-        //validate user details and register user
+            button = findViewById(R.id.register);
 
-        button = findViewById(R.id.register);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        progressDialog.show();
+                        //TODO AFTER VALDATION
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try{
-                    progressDialog.show();
-                    //TODO AFTER VALDATION
-
-                    if ( validateName() && validateEmail() && validateNumber() ) {
-                        if(validatePhoto()){
-                            if(otpStatus){
+                        if (validateName() && validateEmail() && validateNumber()) {
+                            if (validatePhoto()) {
+                                if (otpStatus) {
 
 
-                            name = edtname.getText().toString();
-                            email = edtemail.getText().toString();
-                            password = edtcnfpass.getText().toString();
-                            mobile = edtnumber.getText().toString();
+                                    name = edtname.getText().toString();
+                                    email = edtemail.getText().toString();
+                                    password = edtcnfpass.getText().toString();
+                                    mobile = edtnumber.getText().toString();
 
 
-                            rootRef.child("Agents").child(mobile).addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    if(!snapshot.exists()){
-                                   uploadPhotos(); }
-                                    else{
-                                        Adialog.showAlert("Alert","Please use another mobile number.. This number is already regestered..",RegisterActivity.this);
-                                    }
+                                    rootRef.child("Agents").child(mobile).addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            if (!snapshot.exists()) {
+                                                uploadPhotos();
+                                            } else {
+                                                Adialog.showAlert("Alert", "Please use another mobile number.. This number is already regestered..", RegisterActivity.this);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+                                    //Validation Success
+
+
+                                    progressDialog.show();
+                                } else {
+                                    progressDialog.dismiss();
+                                    Adialog.showAlert("Alert", "Please verify the mobile number..", RegisterActivity.this);
                                 }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-
-                                }
-                            })  ;
-                            //Validation Success
-
-
-                            progressDialog.show();
-                        }
-                        else{
+                            } else {
                                 progressDialog.dismiss();
-                                Adialog.showAlert("Alert","Please verify the mobile number..",RegisterActivity.this);
-                        }           }
-                        else{
+                                Adialog.showAlert("Alert", "Please upload all photos..", RegisterActivity.this);
+                            }
+                        } else {
                             progressDialog.dismiss();
-                            Adialog.showAlert("Alert","Please upload all photos..",RegisterActivity.this);
+                            Adialog.showAlert("Alert", "Please fill all details correctly", RegisterActivity.this);
                         }
-                    } else {
-                        progressDialog.dismiss();
-                        Adialog.showAlert("Alert", "Please fill all details correctly", RegisterActivity.this);
+                    } catch (Exception e) {
+                        e.getMessage();
                     }
                 }
-                catch (Exception e){
-                    e.getMessage();
-                }
-            }
-        });
+            });
 
-        //Take already registered user to Register page
+            //Take already registered user to Register page
 
 
-        //take user to reset password
+            //take user to reset password
 
 
-        upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            upload.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 //                CropImage.activity()
 //                        .setAspectRatio(1, 1)
 //                        .start(RegisterActivity.this);
-                OpenGallery();
+                    OpenGallery();
 //                Dexter.withActivity(RegisterActivity.this)
 //                        .withPermissions(android.Manifest.permission.READ_EXTERNAL_STORAGE,
 //                                android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -322,46 +320,45 @@ OpenGallery2();
 //                        .check();
 
 
-                //result will be available in onActivityResult which is overridden
-            }
-        });
+                    //result will be available in onActivityResult which is overridden
+                }
+            });
 
 
-        callbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-            @Override
-            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
- otpStatus=true;
- signInWithPhoneauthCredential(phoneAuthCredential);
-            }
+            callbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                @Override
+                public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                    otpStatus = true;
+                    signInWithPhoneauthCredential(phoneAuthCredential);
+                }
 
 
-            public void onCodeSent(String VerificationId, PhoneAuthProvider.ForceResendingToken token) {
+                public void onCodeSent(String VerificationId, PhoneAuthProvider.ForceResendingToken token) {
 
-                mVerification = VerificationId;
-                mResendToken = token;
-                progressDialog.dismiss();
-                otpRequest1();
-            }
+                    mVerification = VerificationId;
+                    mResendToken = token;
+                    progressDialog.dismiss();
+                    otpRequest1();
+                }
 
-            @Override
-            public void onVerificationFailed(@NonNull FirebaseException e) {
-                progressDialog.dismiss();
-                Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                @Override
+                public void onVerificationFailed(@NonNull FirebaseException e) {
+                    progressDialog.dismiss();
+                    Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
-            }
+                }
 
-        };}
-      catch (Exception e){
-        e.printStackTrace();
+            };
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
-}
-
     private boolean validatePhoto() {
-        if(!IMAGE_FRONT || !IMAGE_BACK || !IMAGE_STATUS){
+        if (!IMAGE_FRONT || !IMAGE_BACK || !IMAGE_STATUS) {
             return false;
-        }
-        else{
+        } else {
             return true;
         }
     }
@@ -376,6 +373,7 @@ OpenGallery2();
         galleryintent.setType("image/*");
         startActivityForResult(galleryintent, GALLERYINTENT);
     }
+
     private void OpenGallery1() {
 
         Intent galleryintent1 = new Intent();
@@ -383,6 +381,7 @@ OpenGallery2();
         galleryintent1.setType("image/*");
         startActivityForResult(galleryintent1, GALLERYINTENT1);
     }
+
     private void OpenGallery2() {
 
         Intent galleryintent2 = new Intent();
@@ -390,6 +389,7 @@ OpenGallery2();
         galleryintent2.setType("image/*");
         startActivityForResult(galleryintent2, GALLERYINTENT2);
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -397,11 +397,13 @@ OpenGallery2();
             imageUri = data.getData();
             image.setImageURI(imageUri);
             IMAGE_STATUS = true;
-        }    if (requestCode == GALLERYINTENT1 && resultCode == RESULT_OK && data != null) {
+        }
+        if (requestCode == GALLERYINTENT1 && resultCode == RESULT_OK && data != null) {
             imageUri1 = data.getData();
             frontView.setImageURI(imageUri1);
             IMAGE_FRONT = true;
-        }   if (requestCode == GALLERYINTENT2 && resultCode == RESULT_OK && data != null) {
+        }
+        if (requestCode == GALLERYINTENT2 && resultCode == RESULT_OK && data != null) {
             imageUri2 = data.getData();
             backView.setImageURI(imageUri2);
             IMAGE_BACK = true;
@@ -633,7 +635,7 @@ OpenGallery2();
                 try {
 
 //                    updateInfoDisplayProfile(image, edtname, edtnumber, edtemail);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.getMessage();
                 }
             }
@@ -654,23 +656,23 @@ OpenGallery2();
                     String phone = snapshot.child("phone").getValue().toString();
 
                     String email = snapshot.child("email").getValue().toString();
-                    if(!snapshot.child("image").getValue().toString().equals("")){
+                    if (!snapshot.child("image").getValue().toString().equals("")) {
 
                         String image = snapshot.child("image").getValue().toString();
-                        pic= snapshot.child("image").getValue().toString();
+                        pic = snapshot.child("image").getValue().toString();
                         Picasso.get().load(image).into(changeImage);
 
-                        IMAGE_STATUS=true;
+                        IMAGE_STATUS = true;
 
-                    }else{
-                        if(snapshot.child("otp").getValue().equals("0")){
+                    } else {
+                        if (snapshot.child("otp").getValue().equals("0")) {
                             upload.setEnabled(false);
                         }
                     }
                     edtcnfpass.setVisibility(View.GONE);
                     edtpass.setVisibility(View.GONE);
                     otpbtn.setVisibility(View.VISIBLE);
-                    if(snapshot.child("otp").getValue().equals("0")){
+                    if (snapshot.child("otp").getValue().equals("0")) {
                         otpbtn.setVisibility(View.GONE);
                         button.setEnabled(false);
                         button.setBackgroundResource(R.drawable.txtviewbg);
@@ -680,7 +682,7 @@ OpenGallery2();
 //                       Toast.makeText(RegisterActivity.this, "User already Registered..Please Go to Login", Toast.LENGTH_SHORT).show();
                     }
 
-                    STATUS=true;
+                    STATUS = true;
                     //    imageUri=snapshot.child("image").getValue().toString();
                     userNameChange.setText(name);
                     phonenumChange.setText(phone);
@@ -710,7 +712,7 @@ OpenGallery2();
 
 
     private boolean validateProfile() {
-        if (!IMAGE_STATUS  )
+        if (!IMAGE_STATUS)
             Toasty.info(RegisterActivity.this, "Select A Profile Picture", Toast.LENGTH_LONG).show();
         return IMAGE_STATUS;
     }
@@ -909,12 +911,12 @@ OpenGallery2();
                                                      } else {
 
                                                          progressDialog.dismiss();
-otpStatus=true;
-alertDialog.dismiss();
-Adialog.showAlert("Alert", "Verification done..", RegisterActivity.this);
-edtnumber.setEnabled(false);
-edtnumber.setBackgroundResource(R.drawable.txtviewbg);
-otpbtn.setEnabled(false);
+                                                         otpStatus = true;
+                                                         alertDialog.dismiss();
+                                                         Adialog.showAlert("Alert", "Verification done..", RegisterActivity.this);
+                                                         edtnumber.setEnabled(false);
+                                                         edtnumber.setBackgroundResource(R.drawable.txtviewbg);
+                                                         otpbtn.setEnabled(false);
                                                          otpbtn.setBackgroundResource(R.drawable.txtviewbg);
 // Toast.makeText(RegisterActivity.this, mVerification, Toast.LENGTH_SHORT).show();
 //                                                         PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(mVerification, VerificationCode);
@@ -1039,7 +1041,7 @@ otpbtn.setEnabled(false);
                     try {
 
 //                        updateInfoDisplayProfile(image, edtname, edtnumber, edtemail);
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.getMessage();
                     }
                 }
@@ -1062,17 +1064,17 @@ otpbtn.setEnabled(false);
 
 
     public void goRegister(View view) {
-        startActivity(new Intent(this,RegisterActivity.class));
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 
     public void toLogin(View view) {
-        startActivity(new Intent(this,MainActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
         finish();
     }
 
     public void toForgot(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View v = LayoutInflater.from(this).inflate(R.layout.reset,null,false);
+        View v = LayoutInflater.from(this).inflate(R.layout.reset, null, false);
         final EditText mail = v.findViewById(R.id.remail);
         builder.setView(v);
         builder.setCancelable(false);
@@ -1080,19 +1082,18 @@ otpbtn.setEnabled(false);
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 String umail = mail.getText().toString();
-                if (TextUtils.isEmpty(umail)){
+                if (TextUtils.isEmpty(umail)) {
                     Toast.makeText(RegisterActivity.this, "mail cant be empty",
                             Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     mAuth.sendPasswordResetEmail(umail).addOnCompleteListener(RegisterActivity.this,
                             new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()){
+                                    if (task.isSuccessful()) {
                                         Toast.makeText(RegisterActivity.this, "Mail sent",
                                                 Toast.LENGTH_SHORT).show();
-                                    }
-                                    else{
+                                    } else {
                                         Toast.makeText(RegisterActivity.this, "failed to send", Toast.LENGTH_SHORT).show();
                                     }
                                 }
@@ -1109,12 +1110,13 @@ otpbtn.setEnabled(false);
         });
         builder.show();
     }
-    public void uploadPhotos(){
+
+    public void uploadPhotos() {
         storageReference = FirebaseStorage.getInstance().getReference().child("Deliver Agent info").child(edtnumber.getText().toString());
 
-        final StorageReference filePath=storageReference.child(imageUri.getLastPathSegment()+" "+(edtnumber.getText().toString())+".jpg");
-        final StorageReference filePath1=storageReference.child(imageUri1.getLastPathSegment()+" "+(edtnumber.getText().toString())+".jpg");
-        final StorageReference filePath2=storageReference.child(imageUri2.getLastPathSegment()+" "+(edtnumber.getText().toString())+".jpg");
+        final StorageReference filePath = storageReference.child(imageUri.getLastPathSegment() + " " + (edtnumber.getText().toString()) + ".jpg");
+        final StorageReference filePath1 = storageReference.child(imageUri1.getLastPathSegment() + " " + (edtnumber.getText().toString()) + ".jpg");
+        final StorageReference filePath2 = storageReference.child(imageUri2.getLastPathSegment() + " " + (edtnumber.getText().toString()) + ".jpg");
         Bitmap bmp = null;
         try {
             bmp = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
@@ -1124,33 +1126,33 @@ otpbtn.setEnabled(false);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 25, baos);
         byte[] data = baos.toByteArray();
-        final UploadTask uploadTask=filePath.putFile(imageUri);
+        final UploadTask uploadTask = filePath.putFile(imageUri);
 //        UploadTask uploadTask = filePath.putBytes(data);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                String msg=e.toString();
-                Toast.makeText(RegisterActivity.this,"Error:",Toast.LENGTH_SHORT).show();
+                String msg = e.toString();
+                Toast.makeText(RegisterActivity.this, "Error:", Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(RegisterActivity.this,"Profile Image Uploaded Successfully...",Toast.LENGTH_SHORT).show();
-                Task<Uri> uriTask=uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                Toast.makeText(RegisterActivity.this, "Profile Image Uploaded Successfully...", Toast.LENGTH_SHORT).show();
+                Task<Uri> uriTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                     @Override
                     public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                        if(!task.isSuccessful()){
-                            throw  task.getException();
+                        if (!task.isSuccessful()) {
+                            throw task.getException();
                         }
-                        DownloadUri=filePath.getDownloadUrl().toString();
+                        DownloadUri = filePath.getDownloadUrl().toString();
                         return filePath.getDownloadUrl();
                     }
                 }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
-                        if(task.isSuccessful()){
-                            DownloadUri=task.getResult().toString();
+                        if (task.isSuccessful()) {
+                            DownloadUri = task.getResult().toString();
                             //         Toast.makeText(AddProductActivity.this,"got the Product Image saved to database...",Toast.LENGTH_SHORT).show();
                             saveInfoToDatabase();
                         }
@@ -1159,65 +1161,65 @@ otpbtn.setEnabled(false);
             }
         });
 
-        final UploadTask uploadTask1=filePath1.putFile(imageUri1);
+        final UploadTask uploadTask1 = filePath1.putFile(imageUri1);
         uploadTask1.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                String msg=e.toString();
-                Toast.makeText(RegisterActivity.this,"Error:"+msg,Toast.LENGTH_SHORT).show();
+                String msg = e.toString();
+                Toast.makeText(RegisterActivity.this, "Error:" + msg, Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Task<Uri> uriTask1=uploadTask1.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                Task<Uri> uriTask1 = uploadTask1.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                     @Override
                     public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                        if(!task.isSuccessful()){
-                            throw  task.getException();
+                        if (!task.isSuccessful()) {
+                            throw task.getException();
                         }
-                        DownloadUri1=filePath1.getDownloadUrl().toString();
+                        DownloadUri1 = filePath1.getDownloadUrl().toString();
                         return filePath1.getDownloadUrl();
                     }
                 }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
-                        if(task.isSuccessful()){
-                            DownloadUri1=task.getResult().toString();
-                            Toast.makeText(RegisterActivity.this,"got the Aadhaar front image saved to database...",Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) {
+                            DownloadUri1 = task.getResult().toString();
+                            Toast.makeText(RegisterActivity.this, "got the Aadhaar front image saved to database...", Toast.LENGTH_SHORT).show();
                             saveInfoToDatabase();
                         }
                     }
                 });
             }
         });
-        final UploadTask uploadTask2=filePath2.putFile(imageUri2);
+        final UploadTask uploadTask2 = filePath2.putFile(imageUri2);
 
         uploadTask2.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                String msg=e.toString();
-                Toast.makeText(RegisterActivity.this,"Error:",Toast.LENGTH_SHORT).show();
+                String msg = e.toString();
+                Toast.makeText(RegisterActivity.this, "Error:", Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Task<Uri> uriTask2=uploadTask2.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                Task<Uri> uriTask2 = uploadTask2.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                     @Override
                     public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                        if(!task.isSuccessful()){
-                            throw  task.getException();
+                        if (!task.isSuccessful()) {
+                            throw task.getException();
                         }
-                        DownloadUri2=filePath2.getDownloadUrl().toString();
+                        DownloadUri2 = filePath2.getDownloadUrl().toString();
                         return filePath2.getDownloadUrl();
                     }
                 }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
-                        if(task.isSuccessful()){
-                            DownloadUri2=task.getResult().toString();
-                            Toast.makeText(RegisterActivity.this,"got the Aadhaar back image saved to database...",Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) {
+                            DownloadUri2 = task.getResult().toString();
+                            Toast.makeText(RegisterActivity.this, "got the Aadhaar back image saved to database...", Toast.LENGTH_SHORT).show();
                             saveInfoToDatabase();
                         }
                     }
@@ -1295,6 +1297,7 @@ otpbtn.setEnabled(false);
         });
 
     }
+
     private void signInWithPhoneauthCredential(PhoneAuthCredential credential) {
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -1305,7 +1308,7 @@ otpbtn.setEnabled(false);
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
-                            currentUserId=firebaseAuth.getCurrentUser().getUid();
+                            currentUserId = firebaseAuth.getCurrentUser().getUid();
                             progressDialog.dismiss();
                         } else {
                             String msg = task.getException().toString();

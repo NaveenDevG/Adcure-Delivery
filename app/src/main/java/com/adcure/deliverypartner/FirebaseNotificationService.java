@@ -32,14 +32,15 @@ public class FirebaseNotificationService extends FirebaseMessagingService {
 
 
     MediaPlayer mediaPlayer;
-String email="j";
+    String email = "j";
+
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
 
         if (remoteMessage.getData().size() > 0) {
             Map<String, String> map = remoteMessage.getData();
 
-           // Uri uri = RingtoneManager.getActualDefaultRingtoneUri(FirebaseNotificationService.this, RingtoneManager.TYPE_RINGTONE);
+            // Uri uri = RingtoneManager.getActualDefaultRingtoneUri(FirebaseNotificationService.this, RingtoneManager.TYPE_RINGTONE);
 
 
             //videocall
@@ -125,12 +126,12 @@ String email="j";
     //Video
     private void createNormalNotification(String title, String message, String hisID) {
 
-    // CommonMediaPlayer.getMediaPlayerInstance().playAudioFile(this,uri);
+        // CommonMediaPlayer.getMediaPlayerInstance().playAudioFile(this,uri);
 
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        CommonMediaPlayer.getMediaPlayerInstance().playAudioFile(this,uri);
+        CommonMediaPlayer.getMediaPlayerInstance().playAudioFile(this, uri);
 
-       // Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), uri);
+        // Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), uri);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, AllConstants.CHANNEL_ID);
         builder.setContentTitle(title)
@@ -152,7 +153,7 @@ String email="j";
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         manager.notify(new Random().nextInt(85 - 65), builder.build());
 
-       // ringtone.play();
+        // ringtone.play();
 
     }
 
@@ -161,7 +162,7 @@ String email="j";
     private void createOreoNotification(String title, String message, String hisID) {
 
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        CommonMediaPlayer.getMediaPlayerInstance().playAudioFile(this,uri);
+        CommonMediaPlayer.getMediaPlayerInstance().playAudioFile(this, uri);
 
   /*      mediaPlayer=MediaPlayer.create(getApplicationContext(),uri);
         mediaPlayer.setLooping(true);
@@ -195,7 +196,7 @@ String email="j";
                 .build();
         manager.notify(100, notification);
 
-       // ringtone.play();
+        // ringtone.play();
 
     }
 
@@ -211,20 +212,20 @@ String email="j";
                 .setSound(uri)
                 .setColor(ResourcesCompat.getColor(getResources(), R.color.colorPrimary, null));
 
-        Intent intent=new Intent();
-        if(title.equals("Order")  ){
+        Intent intent = new Intent();
+        if (title.equals("Order")) {
             intent = intent.setClass(this, MainActivity.class);
 
-        }else if(title.equals("Carts")){
+        } else if (title.equals("Carts")) {
             intent = intent.setClass(this, MainActivity.class);
 //            getDetails(hisID);
 //     intent=intent.putExtra("uid",hisID);
 //            intent=intent.putExtra("euid",email);
-  }
-        else{
+        } else {
             intent = intent.setClass(this, MainActivity.class);
 
-        }        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        }
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
@@ -248,14 +249,13 @@ String email="j";
 
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.createNotificationChannel(channel);
-        Intent intent=new Intent();
-if(title.equals("Order")){
-    intent = intent.setClass(this, MainActivity.class);
+        Intent intent = new Intent();
+        if (title.equals("Order")) {
+            intent = intent.setClass(this, MainActivity.class);
 
-}
-else{
-        intent = intent.setClass(this, MainActivity.class);
-}
+        } else {
+            intent = intent.setClass(this, MainActivity.class);
+        }
 
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 

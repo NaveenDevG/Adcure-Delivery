@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     private TextView txt;
     FirebaseAuth mAuth;
-MaterialSearchBar materialSearchBar;
+    MaterialSearchBar materialSearchBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
@@ -43,9 +44,9 @@ MaterialSearchBar materialSearchBar;
             recyclerView.setHasFixedSize(true);
             mAuth = FirebaseAuth.getInstance();
             layoutManager = new LinearLayoutManager(this);
-            materialSearchBar=findViewById(R.id.searchBar);
+            materialSearchBar = findViewById(R.id.searchBar);
 
-             materialSearchBar.addTextChangeListener(TextWatcher1);
+            materialSearchBar.addTextChangeListener(TextWatcher1);
             recyclerView.setLayoutManager(layoutManager);
             txt = (TextView) findViewById(R.id.no);
             String uid = mAuth.getCurrentUser().getUid();
@@ -59,6 +60,7 @@ MaterialSearchBar materialSearchBar;
 
 
     }
+
     private final android.text.TextWatcher TextWatcher1 = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -71,9 +73,9 @@ MaterialSearchBar materialSearchBar;
         @Override
         public void afterTextChanged(Editable s) {
 
-            if(materialSearchBar.getText().toString().equals("")){
+            if (materialSearchBar.getText().toString().equals("")) {
                 onStart();
-            }else {
+            } else {
                 onSearch();
             }
         }
@@ -85,7 +87,7 @@ MaterialSearchBar materialSearchBar;
         productRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists() ) {
+                if (snapshot.exists()) {
                     Query query = snapshot.getRef();
                     FirebaseRecyclerOptions<Orders> options =
                             new FirebaseRecyclerOptions.Builder<Orders>()
@@ -93,7 +95,8 @@ MaterialSearchBar materialSearchBar;
                     FirebaseRecyclerAdapter<Orders, OrderViewHolder> adapter =
                             new FirebaseRecyclerAdapter<Orders, OrderViewHolder>(options) {
                                 @Override
-                                protected void onBindViewHolder(@NonNull OrderViewHolder holder, int position, @NonNull final Orders model) {                                    holder.itemcount.setText("Items : " + model.getItems());
+                                protected void onBindViewHolder(@NonNull OrderViewHolder holder, int position, @NonNull final Orders model) {
+                                    holder.itemcount.setText("Items : " + model.getItems());
                                     holder.payid.setText("Invoice id : " + model.getInvoiceid());
                                     String ordered;
                                     if (model.getDelivered().equals("y") && model.getShipped().equals("y") || model.getDelivered().equals("y")) {
@@ -110,19 +113,19 @@ MaterialSearchBar materialSearchBar;
                                         ordered = "Not shipped Yet";
 
                                     }
-                                    if(model.getDelivered().equals("y")){
+                                    if (model.getDelivered().equals("y")) {
                                         holder.toViewPro.setVisibility(View.GONE);
                                     }
 
                                     holder.toViewPro.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            if(model.getDelivered().equals("y")){
-                                                DatabaseReference productRef= FirebaseDatabase.getInstance().getReference().child("Users").child(model.getUid()).child("Pharmacy").child("Orders").child(model.getPaymentid());
+                                            if (model.getDelivered().equals("y")) {
+                                                DatabaseReference productRef = FirebaseDatabase.getInstance().getReference().child("Users").child(model.getUid()).child("Pharmacy").child("Orders").child(model.getPaymentid());
                                                 productRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                                     @Override
                                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                        productRef.child("paid").setValue(model.getPaid().replace("COD - Not paid ",""));
+                                                        productRef.child("paid").setValue(model.getPaid().replace("COD - Not paid ", ""));
                                                     }
 
                                                     @Override
@@ -136,11 +139,10 @@ MaterialSearchBar materialSearchBar;
                                             intent.putExtra("addr", model.getGaddress());
                                             intent.putExtra("num", model.getGphone());
                                             intent.putExtra("nme", model.getGname());
-                                            if(model.getPaid().contains("COD") && model.getDelivered().equals("y")){
-                                                intent.putExtra("paid", model.getPaid().replace("COD - Not paid ",""));
-                                            }
-                                            else{
-                                                intent.putExtra("paid", model.getPaid() );
+                                            if (model.getPaid().contains("COD") && model.getDelivered().equals("y")) {
+                                                intent.putExtra("paid", model.getPaid().replace("COD - Not paid ", ""));
+                                            } else {
+                                                intent.putExtra("paid", model.getPaid());
                                             }
                                             intent.putExtra("uid", model.getUid());
                                             intent.putExtra("shipped", ordered);
@@ -153,7 +155,7 @@ MaterialSearchBar materialSearchBar;
                                             if (model.getInvoiceid() != null) {
                                                 intent.putExtra("inv", model.getInvoiceid());
                                             }
-                                            if(model.getFivepercentcoupon() == null){
+                                            if (model.getFivepercentcoupon() == null) {
 
                                                 intent.putExtra("5%offer", "");
                                                 intent.putExtra("couponamount", "");
@@ -199,11 +201,11 @@ MaterialSearchBar materialSearchBar;
 
     }
 
-    public  void onSearch(){
+    public void onSearch() {
         productRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists() ) {
+                if (snapshot.exists()) {
                     Query query = snapshot.getRef();
                     FirebaseRecyclerOptions<Orders> options =
                             new FirebaseRecyclerOptions.Builder<Orders>()
@@ -231,12 +233,12 @@ MaterialSearchBar materialSearchBar;
                                         ordered = "Not shipped Yet";
 
                                     }
-                                    if(model.getDelivered().equals("y")){
+                                    if (model.getDelivered().equals("y")) {
                                         holder.toViewPro.setVisibility(View.GONE);
                                     }
-                                    if(model.getInvoiceid().equals(materialSearchBar.getText().toString())){
+                                    if (model.getInvoiceid().equals(materialSearchBar.getText().toString())) {
                                         holder.ll_h.setVisibility(View.VISIBLE);
-                                    }else{
+                                    } else {
                                         holder.ll_h.setVisibility(View.GONE);
 
                                     }
@@ -244,12 +246,12 @@ MaterialSearchBar materialSearchBar;
                                     holder.toViewPro.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            if(model.getDelivered().equals("y")){
-                                                DatabaseReference productRef= FirebaseDatabase.getInstance().getReference().child("Users").child(model.getUid()).child("Pharmacy").child("Orders").child(model.getPaymentid());
+                                            if (model.getDelivered().equals("y")) {
+                                                DatabaseReference productRef = FirebaseDatabase.getInstance().getReference().child("Users").child(model.getUid()).child("Pharmacy").child("Orders").child(model.getPaymentid());
                                                 productRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                                     @Override
                                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                        productRef.child("paid").setValue(model.getPaid().replace("COD - Not paid ",""));
+                                                        productRef.child("paid").setValue(model.getPaid().replace("COD - Not paid ", ""));
                                                     }
 
                                                     @Override
@@ -263,10 +265,10 @@ MaterialSearchBar materialSearchBar;
                                             intent.putExtra("addr", model.getGaddress());
                                             intent.putExtra("num", model.getGphone());
                                             intent.putExtra("nme", model.getGname());
-                                            if(model.getPaid().contains("COD") && model.getDelivered().equals("y")){
-                                                intent.putExtra("paid", model.getPaid().replace("COD - Not paid ",""));}
-                                            else{
-                                                intent.putExtra("paid", model.getPaid() );
+                                            if (model.getPaid().contains("COD") && model.getDelivered().equals("y")) {
+                                                intent.putExtra("paid", model.getPaid().replace("COD - Not paid ", ""));
+                                            } else {
+                                                intent.putExtra("paid", model.getPaid());
                                             }
                                             intent.putExtra("uid", model.getUid());
                                             intent.putExtra("shipped", ordered);
@@ -279,7 +281,7 @@ MaterialSearchBar materialSearchBar;
                                             if (model.getInvoiceid() != null) {
                                                 intent.putExtra("inv", model.getInvoiceid());
                                             }
-                                            if(model.getFivepercentcoupon() == null){
+                                            if (model.getFivepercentcoupon() == null) {
 
                                                 intent.putExtra("5%offer", "");
                                                 intent.putExtra("couponamount", "");

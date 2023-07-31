@@ -16,7 +16,7 @@
         android:drawableLeft="@drawable/ic_profile"
         android:gravity="left|center"
         android:paddingLeft="@dimen/padding5"
-        android:text="  Enter OTP"
+        android:text="  Enter PIN"
         android:textColor="@color/white" />
 
     <LinearLayout
@@ -44,7 +44,7 @@
                     android:layout_gravity="center"
                     android:background="@color/colorAccent"
                     android:gravity="center"
-                    android:text="Verification Code"
+                    android:text="Verification Pin"
                     android:textColor="@color/purple_500"
                     android:textSize="@dimen/fontSize"
                     android:textStyle="bold" />
@@ -55,7 +55,7 @@
                     android:layout_gravity="center"
                     android:background="@color/white"
                     android:gravity="center"
-                    android:text="Enter OTP send to your Mobile Number"
+                    android:text="Enter PIN to update the order status"
                     android:textColor="@color/purple_500"
                     android:textSize="@dimen/importtext"
                     android:textStyle="bold" />
@@ -84,10 +84,10 @@
                     android:layout_height="@dimen/editTextHeight"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:gravity="right|center"
+                    android:gravity="center"
                     android:paddingRight="@dimen/margin15dp"
                     android:paddingTop="@dimen/padding5"
-                    android:text="OTP:"
+                    android:text="PIN:"
                     android:textColor="@color/black"
                     android:textSize="@dimen/fieldNameSize"
                     android:textStyle="bold" />
@@ -112,6 +112,7 @@
                     android:gravity="left|center_vertical"
                     android:paddingLeft="@dimen/padding10"
                     android:text="TimerStart:"
+                    android:visibility="gone"
                     android:textColor="@color/black"
                     android:textSize="@dimen/fieldInnerConstantNameSize" />
 
@@ -141,6 +142,7 @@
                 android:background="@drawable/button"
                 android:filterTouchesWhenObscured="true"
                 android:text="Verify OTP"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="@dimen/buttonFontSize" />
 
@@ -153,7 +155,7 @@
                 android:layout_weight="1"
                 android:textAllCaps="false"
                 android:background="@drawable/button"
-                android:text="Resend OTP"
+                android:text="Verify Pin"
                 android:filterTouchesWhenObscured="true"
                 android:textColor="@color/white"
                 android:textSize="@dimen/buttonFontSize" />

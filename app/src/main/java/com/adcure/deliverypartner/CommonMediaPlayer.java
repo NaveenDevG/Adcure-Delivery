@@ -6,7 +6,7 @@ import android.net.Uri;
 
 public class CommonMediaPlayer {
     public static CommonMediaPlayer Instance;
-    static MediaPlayer mediaPlayer=new MediaPlayer();
+    static MediaPlayer mediaPlayer = new MediaPlayer();
 
     public static CommonMediaPlayer getMediaPlayerInstance() {
         if (Instance == null) {
@@ -16,8 +16,8 @@ public class CommonMediaPlayer {
     }
 
     public void playAudioFile(Context context, Uri sampleAudio) {
-        if (mediaPlayer!=null){
-            mediaPlayer=MediaPlayer.create(context,sampleAudio);
+        if (mediaPlayer != null) {
+            mediaPlayer = MediaPlayer.create(context, sampleAudio);
             mediaPlayer.setLooping(true);
             mediaPlayer.start();
         }

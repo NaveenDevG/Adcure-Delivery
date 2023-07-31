@@ -1,11 +1,11 @@
 package com.adcure.deliverypartner;
 
 public class Carts {
-    private  String pid,date,discount,quantity,pname,price,time,umail,uname,uphone,pimg,deliverycharge,ordered,presc,imgPresc;
+    private String pid, date, discount, quantity, pname, price, time, umail, uname, uphone, pimg, deliverycharge, ordered, presc, imgPresc;
 
     public Carts(String pid, String pimg, String deliverycharge, String date, String discount, String quantity, String pname, String price, String time, String umail, String uname, String uphone) {
         this.pid = pid;
-        this.deliverycharge=deliverycharge;
+        this.deliverycharge = deliverycharge;
         this.date = date;
         this.discount = discount;
         this.quantity = quantity;
@@ -15,7 +15,7 @@ public class Carts {
         this.umail = umail;
         this.uname = uname;
         this.uphone = uphone;
-        this.pimg=pimg;
+        this.pimg = pimg;
     }
 
     public String getPresc() {

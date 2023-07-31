@@ -13,44 +13,44 @@ public class CheckInternetConnection {
 
     Context ctx;
 
-    public CheckInternetConnection(Context context){
-        ctx=context;
+    public CheckInternetConnection(Context context) {
+        ctx = context;
     }
 
-    public void checkConnection(){
+    public void checkConnection() {
 
-        if(!isInternetConnected()) {
+        if (!isInternetConnected()) {
 
-                final FancyAlertDialog.Builder alert = new FancyAlertDialog.Builder(ctx)
-                        .setBackgroundColor(R.color.colorPrimary)
-                        .setimageResource(R.drawable.internetconnection)
-                        .setTextTitle("No Internet")
-                        .setTextSubTitle("Cannot connect to a servers")
-                        .setBody(R.string.noconnection)
-                        .setPositiveButtonText("Connect Now")
-                        .setPositiveColor(R.color.colorPrimaryDark)
-                        .setOnPositiveClicked(new FancyAlertDialog.OnPositiveClicked() {
-                            @Override
-                            public void OnClick(View view, Dialog dialog) {
+            final FancyAlertDialog.Builder alert = new FancyAlertDialog.Builder(ctx)
+                    .setBackgroundColor(R.color.colorPrimary)
+                    .setimageResource(R.drawable.internetconnection)
+                    .setTextTitle("No Internet")
+                    .setTextSubTitle("Cannot connect to a servers")
+                    .setBody(R.string.noconnection)
+                    .setPositiveButtonText("Connect Now")
+                    .setPositiveColor(R.color.colorPrimaryDark)
+                    .setOnPositiveClicked(new FancyAlertDialog.OnPositiveClicked() {
+                        @Override
+                        public void OnClick(View view, Dialog dialog) {
 
-                                if(isInternetConnected()){
+                            if (isInternetConnected()) {
 
-                                    dialog.dismiss();
+                                dialog.dismiss();
 
-                                }else {
+                            } else {
 
-                                    Intent dialogIntent = new Intent(android.provider.Settings.ACTION_SETTINGS);
-                                    dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    ctx.startActivity(dialogIntent);
-                                }
-                             }
-                        })
-                        .setBodyGravity(FancyAlertDialog.TextGravity.CENTER)
-                        .setTitleGravity(FancyAlertDialog.TextGravity.CENTER)
-                        .setSubtitleGravity(FancyAlertDialog.TextGravity.CENTER)
-                        .setCancelable(false)
-                        .build();
-                alert.show();
+                                Intent dialogIntent = new Intent(android.provider.Settings.ACTION_SETTINGS);
+                                dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                ctx.startActivity(dialogIntent);
+                            }
+                        }
+                    })
+                    .setBodyGravity(FancyAlertDialog.TextGravity.CENTER)
+                    .setTitleGravity(FancyAlertDialog.TextGravity.CENTER)
+                    .setSubtitleGravity(FancyAlertDialog.TextGravity.CENTER)
+                    .setCancelable(false)
+                    .build();
+            alert.show();
         }
     }
 

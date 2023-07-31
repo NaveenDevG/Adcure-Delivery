@@ -71,7 +71,7 @@ public class OtpActivity extends AppCompatActivity {
                 rootRef.child("Agents").child(phoneNumber.getText().toString()).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.exists()){
+                        if (snapshot.exists()) {
                             String phone = "+91" + phoneNumber.getText().toString();
                             if (TextUtils.isEmpty(phoneNumber.getText().toString()) || phoneNumber.getText().toString().equals("")) {
                                 Toast.makeText(OtpActivity.this, "Please enter your Phone Number with out country code...", Toast.LENGTH_SHORT).show();
@@ -85,7 +85,7 @@ public class OtpActivity extends AppCompatActivity {
                                         phone, 60, TimeUnit.SECONDS, OtpActivity.this, callbacks
                                 );
                             }
-                        }else{
+                        } else {
                             Toast.makeText(OtpActivity.this, "Mobile number is not registered yet..", Toast.LENGTH_SHORT).show();
                         }
                     }

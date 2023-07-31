@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView payid, shipped, itemcount, txtShip;
     public Button toViewPro;
-public LinearLayout ll_h;
+    public LinearLayout ll_h;
+
     public OrderViewHolder(@NonNull View itemView) {
         super(itemView);
         payid = itemView.findViewById(R.id.orderId);
@@ -19,7 +20,7 @@ public LinearLayout ll_h;
         itemcount = itemView.findViewById(R.id.txtItemscount);
         toViewPro = itemView.findViewById(R.id.ordersItems);
         txtShip = itemView.findViewById(R.id.txtNotshipp);
-        ll_h=itemView.findViewById(R.id.ll_h);
+        ll_h = itemView.findViewById(R.id.ll_h);
     }
 
     @Override

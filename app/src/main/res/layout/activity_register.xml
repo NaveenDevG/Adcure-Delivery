@@ -32,7 +32,7 @@
                 android:layout_below="@+id/logo"
                 android:text="AdCure Delivery"
                 android:layout_marginBottom="20dp"
-                android:layout_centerHorizontal="true"/>
+                android:layout_centerHorizontal="true" />
 
             <RelativeLayout
                 android:gravity="center"
@@ -70,7 +70,7 @@
                 app:met_baseColor="@color/colorAccent"
                 app:met_clearButton="true"
                 app:met_primaryColor="@color/colorAccent"
-                app:met_errorColor="@color/darkWhite"/>
+                app:met_errorColor="@color/darkWhite" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/email"
@@ -82,7 +82,7 @@
                 app:met_baseColor="@color/colorAccent"
                 app:met_errorColor="@color/darkWhite"
                 app:met_primaryColor="@color/colorAccent"
-                app:met_clearButton="true"/>
+                app:met_clearButton="true" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/password"
@@ -96,26 +96,28 @@
                 app:met_errorColor="@color/darkWhite"
                 app:met_baseColor="@color/colorAccent"
                 app:met_primaryColor="@color/colorAccent"
-                app:met_clearButton="true"/>
+                app:met_clearButton="true" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
+
                 <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/confirmpassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Reenter Password"
-                app:met_iconLeft="@drawable/lock"
-                android:layout_weight="3"
-                android:visibility="gone"
-                app:met_floatingLabel="highlight"
-                app:met_baseColor="@color/colorAccent"
-                app:met_clearButton="true"
-                app:met_errorColor="@color/darkWhite"
-                app:met_primaryColor="@color/colorAccent"
-                android:inputType="textPassword"/>
+                    android:id="@+id/confirmpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Reenter Password"
+                    app:met_iconLeft="@drawable/lock"
+                    android:layout_weight="3"
+                    android:visibility="gone"
+                    app:met_floatingLabel="highlight"
+                    app:met_baseColor="@color/colorAccent"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@color/darkWhite"
+                    app:met_primaryColor="@color/colorAccent"
+                    android:inputType="textPassword" />
+
                 <Button
                     android:id="@+id/bt_email_verify"
                     style="@style/AppTheme.RoundedCornerMaterialButton"
@@ -127,11 +129,14 @@
                     android:textAllCaps="false"
                     android:filterTouchesWhenObscured="true"
                     android:text="Verify"
-                    android:textSize="13dp" /></LinearLayout>
+                    android:textSize="13dp" />
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
+
                 <com.rengwuxian.materialedittext.MaterialEditText
                     android:id="@+id/number"
                     android:layout_width="match_parent"
@@ -146,7 +151,7 @@
                     app:met_clearButton="true"
                     android:layout_weight="3"
                     app:met_primaryColor="@color/colorAccent"
-                    android:inputType="number"/>
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/bt_primaryMobile_verify"
@@ -163,6 +168,7 @@
                     android:text="Otp Login"
                     android:textSize="13dp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -171,13 +177,14 @@
                 android:background="@drawable/bor"
                 android:layout_marginBottom="5dp"
                 android:id="@+id/ll_front">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Aadhaar Front upload: "
                     android:textSize="16sp"
-                    android:textColor="@color/white"
-                    />
+                    android:textColor="@color/white" />
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -188,6 +195,7 @@
                     android:src="@drawable/ic_photo_camera">
 
                 </ImageButton>
+
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
@@ -197,6 +205,7 @@
 
                 </ImageView>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -205,13 +214,14 @@
                 android:background="@drawable/bor"
                 android:layout_marginBottom="5dp"
                 android:id="@+id/ll_back">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Aadhaar Back upload: "
                     android:textSize="16sp"
-                    android:textColor="@color/white"
-                    />
+                    android:textColor="@color/white" />
+
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -222,6 +232,7 @@
                     android:src="@drawable/ic_photo_camera">
 
                 </ImageButton>
+
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
@@ -244,7 +255,7 @@
                     android:layout_marginTop="10dp"
                     android:id="@+id/register"
                     android:text="Register"
-android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorPrimary"
                     style="@style/AppTheme.RoundedCornerMaterialButton"
                     android:textSize="15sp" />
 
@@ -264,7 +275,7 @@ android:textColor="@color/colorPrimary"
                     android:text="Forgotpassword"
                     android:visibility="gone"
                     android:onClick="toForgot"
-                    style="@style/fonts"/>
+                    style="@style/fonts" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -274,7 +285,7 @@ android:textColor="@color/colorPrimary"
                     style="@style/fonts"
                     android:textStyle="bold"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginRight="10dp" />
 
                 <TextView
                     android:id="@+id/login_now"

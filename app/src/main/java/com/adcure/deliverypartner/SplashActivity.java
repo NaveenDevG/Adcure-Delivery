@@ -48,7 +48,7 @@ public class SplashActivity extends AppCompatActivity {
                             String currentUserid = mAuth.getCurrentUser().getUid();
                         }
                         currentUser = mAuth.getCurrentUser();
-                        if (FirebaseAuth.getInstance().getCurrentUser() != null ) {
+                        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
                             sendUserToMainActivity();
                         } else {
                             sendUserToLoginActivity();

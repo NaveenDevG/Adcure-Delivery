@@ -22,8 +22,7 @@
         app:mt_hintColor="@color/white"
         app:mt_clearIconTint="@color/white"
         app:mt_placeholder="Orders"
-        android:id="@+id/searchBar"
-        />
+        android:id="@+id/searchBar" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,10 +36,11 @@
         android:id="@+id/no"
         android:textAlignment="center"
         android:textColor="#FF5722" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:background="#0F000000"
         android:layout_height="match_parent"
-        android:id="@+id/totalorders_list"/>
+        android:id="@+id/totalorders_list" />
 </LinearLayout>

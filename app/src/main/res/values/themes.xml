@@ -13,6 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="HeaderTextViewStyle" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -27,6 +28,7 @@
         <item name="android:singleLine">true</item>
         <item name="android:ellipsize">none</item>
     </style>
+
     <style name="AppTheme.RoundedCornerMaterialButton" parent="Widget.AppCompat.Button.Colored">
         <item name="android:background">@drawable/rounded_shape</item>
         <item name="colorButtonNormal">@color/colorPrimary</item>
@@ -35,11 +37,13 @@
         <item name="android:paddingLeft">20dp</item>
         <item name="android:paddingRight">20dp</item>
     </style>
+
     <style name="fonts">
         <item name="android:textColor">#fff</item>
         <item name="android:textSize">15sp</item>
 
     </style>
+
     <style name="customdialogtheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <!--buttons color-->
         <item name="colorAccent">#673AB7</item>
