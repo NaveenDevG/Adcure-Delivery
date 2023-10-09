@@ -170,7 +170,6 @@ private String invId="";
                                             }
                                         });
 
-
 //                                        if(state.equals("shipped")){
 //
 //                                            DatabaseReference  databaseReference4 = FirebaseDatabase.getInstance().getReference().child("Pharmacy").child("All Payments").child(uid);
